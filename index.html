@@ -8,29 +8,55 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
+            background-color: #333;
             margin: 0;
             padding: 0;
+            color: white;
         }
         .container {
             width: 80%;
             margin: 50px auto;
-            background-color: #ffffff;
+            background-color: #444;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #ff4747;
         }
         p {
             font-size: 16px;
-            color: #333;
+            color: #ddd;
             margin: 10px 0;
         }
         .signature {
             text-align: right;
             font-style: italic;
+            color: #bbb;
+        }
+        .highlight {
+            background-color: yellow;
+            font-size: 18px;
+            font-weight: bold;
+            transition: font-size 0.3s ease;
+        }
+        .highlight.enlarged {
+            font-size: 30px;
+            color: red;
+        }
+        button {
+            background-color: #ff4747;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #e63636;
         }
     </style>
 </head>
@@ -43,7 +69,7 @@
 
     <p>Mi permetto di scrivere questa lettera con un tono che, sebbene possa sembrare polemico, nasce dal profondo desiderio di migliorare la qualità della nostra vita scolastica quotidiana. È infatti sotto gli occhi di tutti che la situazione legata alla disponibilità di bevande e snack all’interno del nostro istituto è decisamente insufficiente, se non addirittura disastrosa.</p>
 
-    <p>Ogni giorno, studenti e docenti si ritrovano a dover affrontare lunghe ore di lezione senza la possibilità di rinfrescarsi con una semplice bevanda o di mangiare uno snack che possa alleviare la fatica mentale di una giornata scolastica intensa. È assolutamente inaccettabile che una scuola del nostro calibro non sia in grado di fornire un servizio così banale quanto essenziale come le macchinette distributrici di bevande e snack.</p>
+    <p>Ogni giorno, studenti e docenti si ritrovano a dover affrontare lunghe ore di lezione senza la possibilità di rinfrescarsi con una semplice bevanda o di mangiare uno snack che possa alleviare la fatica mentale di una giornata scolastica intensa. <span id="incisiva" class="highlight">È assolutamente inaccettabile che una scuola del nostro calibro non sia in grado di fornire un servizio così banale quanto essenziale come le macchinette distributrici di bevande e snack.</span></p>
 
     <p>Non solo, ma va detto che questo “vuoto” di macchinette rende la vita quotidiana degli studenti molto più difficile. Durante le pause, siamo costretti a farci strada tra i corridoi affollati, alla ricerca di un bar che sia aperto (sempre che ce ne sia uno nelle vicinanze) o, peggio ancora, ad accontentarci di consumare pasti poco salutari in classi sovraffollate.</p>
 
@@ -54,7 +80,16 @@
     <p>Cordiali saluti,</p>
 
     <p class="signature">[Tuo Nome]</p>
+
+    <button onclick="ingrandisciFrase()">Clicca per ingrandire la frase</button>
 </div>
+
+<script>
+    function ingrandisciFrase() {
+        var frase = document.getElementById("incisiva");
+        frase.classList.toggle("enlarged");
+    }
+</script>
 
 </body>
 </html>
